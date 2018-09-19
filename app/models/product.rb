@@ -3,4 +3,6 @@ class Product < ActiveRecord::Base
   has_many :orders, :through => :ordered_products
 
   attr_accessor :description
+
+  @inventory = 0
 end
