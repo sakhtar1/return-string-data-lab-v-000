@@ -12,11 +12,11 @@ $(function () {
         if(inventory === "false"){
           invent = "Sold Out";
         }
-        var descript = '<p>'+ description + '</p> <p>'+ invent + '</p>'
+        var descript = '<p>'+ description + '</p> <p>'+ invent + '</p>';
       }
-      // Replace text of body-id div
-      $("#description-" + id).text(data);
-    });
-  });
+      $("#product-" + id).html(descriptionText);
+     });
+   });
+ });
 });
 </script>
