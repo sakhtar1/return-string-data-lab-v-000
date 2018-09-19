@@ -15,25 +15,25 @@ class ProductsController < ApplicationController
  end
 
  def show
-  set_post
+  set_product
 end
 
 def new
-  @post = Post.new
+  @product = Product.new
 end
 
 def create
-  @post = Post.create(post_params)
-  @post.save
-  redirect_to post_path(@post)
+  @product = Product.create(product_params)
+  @product.save
+  redirect_to product_path(@product)
 end
 
 def edit
 end
 
 def update
-  @post.update(post_params)
-  redirect_to post_path(@post)
+  @product.update(product_params)
+  redirect_to product_path(@product)
 end
 
 
