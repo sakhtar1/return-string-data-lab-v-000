@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field" id="name">
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
 
-  <div class="field" id="description">
+  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
 
-  <div class="field" id="inventory">
+  <div class="field" >
     <%= f.label :inventory %><br>
     <%= f.text_field :inventory %>
   </div>
 
-  <div class="field" id="price">
+  <div class="field" >
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
 
   <div class="actions">
-    <%= f.submit @product.persisted? ? "Update Product" : "Submit Product" %>
+    <%= f.submit "submit" %>
   </div>
 <% end %>
