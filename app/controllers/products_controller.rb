@@ -25,8 +25,7 @@ def new
 end
 
 def create
-  @product = Product.create(product_params)
-  @product.save
+  Product.create(product_params)
   redirect_to product_path
 end
 
