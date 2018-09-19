@@ -2,35 +2,35 @@ class ProductsController < ApplicationController
 
   before_action :set_product, only: [:show, :edit, :update]
 
-  def index
-    @products = Product.all
+    def index
+      @products = Product.all
+    end
+
+    def inventory
+     product = Product.find(params[:id])
+     render plain: product.inventory > 0 ? true : false
+   end
+
+   def description
+     product = Product.find(params[:id])
+     render plain: product.description
+   end
+
+   def show
+    set_product
   end
 
-  def inventory
-   product = Product.find(params[:id])
-   render plain: product.inventory > 0 ? true : false
- end
+  def new
+    @product = Product.new
+  end
 
- def description
-   product = Product.find(params[:id])
-   render plain: product.description
- end
+  def create
+    Product.create(product_params)
+    redirect_to product_path
+  end
 
- def show
-  set_product
-end
-
-def new
-  @product = Product.new
-end
-
-def create
-  Product.create(product_params)
-  redirect_to product_path
-end
-
-def edit
-end
+  def edit
+  end
 
 def update
   @product.update(product_params)
